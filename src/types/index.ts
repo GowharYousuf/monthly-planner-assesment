@@ -4,10 +4,12 @@ export interface Task {
   id: string;
   name: string;
   category: TaskCategory;
-  startDate: string;
-  endDate: string;
+  startDate: Date;
+  endDate: Date;
   notes?: string;
 }
+
+
 
 export interface DragSelection {
   startDay: number;

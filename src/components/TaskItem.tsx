@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { X } from "lucide-react";
 import { Task } from "../types";
+import { formatDate } from "../utils/dateUtils";
 import { CATEGORY_COLORS } from "../constants";
 import { TaskSegment } from "../utils/taskSegmentation";
 
@@ -52,10 +53,6 @@ export const TaskItem: React.FC<TaskItemProps> = ({
   // Check if THIS specific day is the start or end of the segment
   const isStartDay = segment.startDay === day;
   const isEndDay = segment.endDay === day;
-
-  const formatDate = (dateStr: string) => {
-    return new Date(dateStr).toLocaleDateString();
-  };
 
   return (
     <div

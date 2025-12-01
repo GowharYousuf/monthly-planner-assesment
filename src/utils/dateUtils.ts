@@ -112,3 +112,16 @@ export const getMonthName = (
 export const createDate = (year: number, month: number, day: number): Date => {
   return new Date(year, month, day);
 };
+
+export const formatDate = (date: Date | string): string => {
+  const d = date instanceof Date ? date : new Date(date);
+
+  return d.toLocaleDateString("en-IN", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  });
+};
+
+
+
